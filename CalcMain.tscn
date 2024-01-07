@@ -1,0 +1,260 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcrkssb1vxl3q"]
+
+[ext_resource type="Script" path="res://CalcMain.gd" id="1_gbafk"]
+[ext_resource type="FontFile" uid="uid://cgdnhp2rg0xkv" path="res://Roboto-Regular.ttf" id="1_if336"]
+[ext_resource type="Theme" uid="uid://sd3s4pnnq58k" path="res://base_theme.tres" id="2_4jw0k"]
+
+[sub_resource type="Theme" id="Theme_h5x6y"]
+default_font = ExtResource("1_if336")
+default_font_size = 86
+
+[node name="Calc" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gbafk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.211765, 0.211765, 0.317647, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.34
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 8.0
+offset_right = -9.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Display" type="RichTextLabel" parent="ColorRect/VBoxContainer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 3
+theme = SubResource("Theme_h5x6y")
+text = "123"
+fit_content = true
+autowrap_mode = 0
+
+[node name="OpDisplay" type="RichTextLabel" parent="ColorRect/VBoxContainer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme = SubResource("Theme_h5x6y")
+theme_override_font_sizes/normal_font_size = 21
+text = "123"
+fit_content = true
+autowrap_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="GridContainer" type="GridContainer" parent="ColorRect/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 6
+columns = 4
+
+[node name="Btn_CE" type="Button" parent="ColorRect/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_4jw0k")
+text = "CE"
+
+[node name="Btn_C" type="Button" parent="ColorRect/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_4jw0k")
+text = "C"
+
+[node name="Btn_Del" type="Button" parent="ColorRect/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_4jw0k")
+text = "⌫"
+
+[node name="Btn_Mul" type="Button" parent="ColorRect/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_4jw0k")
+text = "×"
+
+[node name="Btn_7" type="Button" parent="ColorRect/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_4jw0k")
+theme_type_variation = &"NumBtn"
+text = "7"
+
+[node name="Btn_8" type="Button" parent="ColorRect/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_4jw0k")
+theme_type_variation = &"NumBtn"
+text = "8"
+
+[node name="Btn_9" type="Button" parent="ColorRect/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_4jw0k")
+theme_type_variation = &"NumBtn"
+text = "9"
+
+[node name="Btn_Div" type="Button" parent="ColorRect/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_4jw0k")
+text = "÷"
+
+[node name="Btn_4" type="Button" parent="ColorRect/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_4jw0k")
+theme_type_variation = &"NumBtn"
+text = "4"
+
+[node name="Btn_5" type="Button" parent="ColorRect/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_4jw0k")
+theme_type_variation = &"NumBtn"
+text = "5"
+
+[node name="Btn_6" type="Button" parent="ColorRect/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_4jw0k")
+theme_type_variation = &"NumBtn"
+text = "6"
+
+[node name="Btn_Minus" type="Button" parent="ColorRect/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_4jw0k")
+text = "-"
+
+[node name="Btn_1" type="Button" parent="ColorRect/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_4jw0k")
+theme_type_variation = &"NumBtn"
+text = "1"
+
+[node name="Btn_2" type="Button" parent="ColorRect/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_4jw0k")
+theme_type_variation = &"NumBtn"
+text = "2"
+
+[node name="Btn_3" type="Button" parent="ColorRect/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_4jw0k")
+theme_type_variation = &"NumBtn"
+text = "3"
+
+[node name="Btn_Ad" type="Button" parent="ColorRect/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_4jw0k")
+text = "+"
+
+[node name="Btn_sign" type="Button" parent="ColorRect/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_4jw0k")
+theme_type_variation = &"NumBtn"
+text = "±"
+
+[node name="Btn_0" type="Button" parent="ColorRect/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_4jw0k")
+theme_type_variation = &"NumBtn"
+text = "0"
+
+[node name="Btn_decimal" type="Button" parent="ColorRect/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_4jw0k")
+theme_type_variation = &"NumBtn"
+text = "."
+
+[node name="Btn_Eq" type="Button" parent="ColorRect/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_4jw0k")
+theme_type_variation = &"EqButton"
+text = "="
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/MarginContainer/GridContainer/Btn_CE" to="." method="_on_btn_ce_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/MarginContainer/GridContainer/Btn_C" to="." method="_on_btn_c_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/MarginContainer/GridContainer/Btn_Del" to="." method="_on_btn_del_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/MarginContainer/GridContainer/Btn_Mul" to="." method="_on_btn_mul_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/MarginContainer/GridContainer/Btn_7" to="." method="_on_btn_7_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/MarginContainer/GridContainer/Btn_8" to="." method="_on_btn_8_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/MarginContainer/GridContainer/Btn_9" to="." method="_on_btn_9_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/MarginContainer/GridContainer/Btn_Div" to="." method="_on_btn_div_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/MarginContainer/GridContainer/Btn_4" to="." method="_on_btn_4_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/MarginContainer/GridContainer/Btn_5" to="." method="_on_btn_5_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/MarginContainer/GridContainer/Btn_6" to="." method="_on_btn_6_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/MarginContainer/GridContainer/Btn_Minus" to="." method="_on_btn_minus_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/MarginContainer/GridContainer/Btn_1" to="." method="_on_btn_1_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/MarginContainer/GridContainer/Btn_2" to="." method="_on_btn_2_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/MarginContainer/GridContainer/Btn_3" to="." method="_on_btn_3_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/MarginContainer/GridContainer/Btn_Ad" to="." method="_on_btn_ad_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/MarginContainer/GridContainer/Btn_sign" to="." method="_on_btn_sign_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/MarginContainer/GridContainer/Btn_0" to="." method="_on_btn_0_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/MarginContainer/GridContainer/Btn_decimal" to="." method="_on_btn_decimal_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/MarginContainer/GridContainer/Btn_Eq" to="." method="_on_btn_eq_pressed"]
